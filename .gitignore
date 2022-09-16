@@ -6,7 +6,6 @@
 /dataSources/
 /dataSources.local.xml
 
-CMakeLists.txt
 # Editor-based HTTP Client requests
 /httpRequests/
 # Prerequisites
