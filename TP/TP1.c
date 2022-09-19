@@ -62,6 +62,7 @@ void geometrie3D() {
     int r,h;
     printf("Quel est le rayon du cercle ? ");
     scanf("%d",&r);
+
     printf("\tDiametre = %d",r*2);
     printf("\n\tCirconference = %.4f",2*3.14159*r);
     printf("\n\tAire = %.4f",3.14159*r*r);
@@ -86,7 +87,7 @@ void majuscule() {
 }
 
 
-void main() {
+int main() {
     //convertisseurDevise();
     //inversionVariable();
     //sommeEtMoyenne();
