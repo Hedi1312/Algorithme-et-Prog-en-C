@@ -94,4 +94,6 @@ int main() {
     //geometrie2D();
     //geometrie3D();
     majuscule();
+
+    return 0;
 }
