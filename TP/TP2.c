@@ -197,8 +197,11 @@ void triangleDesEtoiles() {
     printf("Donnez un nombre de ligne [3 - 10] : ");
     scanf("%d",&n);
 
-    for (int i = 0; i <n ; i++) {
-        printf("*");
+    for (int i = 0; i <=n ; i++) {
+        printf("\n");
+        for (int j = 0; j <= i; j++) {
+            printf("*");
+        }
     }
 }
 
