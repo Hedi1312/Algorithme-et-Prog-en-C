@@ -97,12 +97,109 @@ void codePIN() {
     printf("Entrez un code PIN a 4 chiffres : ");
     scanf("%c %c %c %c",&c1,&c2,&c3,&c4);
 
-    while (code1 !=c1 || code2 !=c2 || code3 !=c3 || code4 != c4) {
+    while ((code1 !=c1 || code2 !=c2 || code3 !=c3 || code4 != c4) && n>0) {
         printf("Erreur, il vous reste %d tentatives \n \tCode Pin : ",n);
         scanf("%c %c %c %c",&c1,&c2,&c3,&c4);
         fflush(stdin);
+        n--;
     }
-    printf("\nBravo, telephone deverouille");
+    if (n <=0) {
+        printf("\nTrop de tentatives, telephone bloque");
+    }
+    else {
+        printf("\nBravo, telephone deverouille");
+    }
+}
+
+void pairImpair() {
+    int n;
+
+    printf("Entrez un nombre entier : ");
+    scanf("%d",&n);
+
+    if(n%2==0) {
+        printf("Le nombre %d est pair",n);
+    }
+    else {
+        printf("Le nombre %d est impair",n);
+    }
+}
+
+void nombrePremier() {
+    int n;
+
+    printf("Entrez un nombre entier : ");
+    scanf("%d",&n);
+}
+
+void conversionDate() {
+    int j,m,a;
+
+    printf("Entrez une date : ");
+    scanf("%d %d %d",&j,&m,&a);
+
+    switch (m) {
+        case 1:
+            printf("%d Janvier %d",j,a);
+            break;
+        case 2:
+            printf("%d Fevrier %d",j,a);
+            break;
+        case 3:
+            printf("%d Mars %d",j,a);
+            break;
+        case 4:
+            printf("%d Avril %d",j,a);
+            break;
+        case 5:
+            printf("%d Mai %d",j,a);
+            break;
+        case 6:
+            printf("%d Juin %d",j,a);
+            break;
+        case 7:
+            printf("%d Juillet %d",j,a);
+            break;
+        case 8:
+            printf("%d Aout %d",j,a);
+            break;
+        case 9:
+            printf("%d Septembre %d",j,a);
+            break;
+        case 10:
+            printf("%d Octobre %d",j,a);
+            break;
+        case 11:
+            printf("%d Novembre %d",j,a);
+            break;
+        case 12:
+            printf("%d Decembre %d",j,a);
+            break;
+        default:
+            printf("%d Mois incorrect %d",j,a);
+    }
+}
+
+void tableMultiplication() {
+    int n;
+
+    printf("Entrez un entier : ");
+    scanf("%d",&n);
+
+    for (int i = 0; i <= n ; i++) {
+        printf("\t%d x %d = %d\n",n,i,n*i);
+    }
+}
+
+void triangleDesEtoiles() {
+    int n;
+
+    printf("Donnez un nombre de ligne [3 - 10] : ");
+    scanf("%d",&n);
+
+    for (int i = 0; i <n ; i++) {
+        printf("*");
+    }
 }
 
 int main () {
@@ -110,7 +207,12 @@ int main () {
     //compteARebour();
     //comparaisonDeNombres();
     //joursDeLaSemaine();
-    codePIN();
+    //codePIN();
+    //pairImpair();
+
+    //conversionDate();
+    //tableMultiplication();
+    triangleDesEtoiles();
 
     return 0;
 }
