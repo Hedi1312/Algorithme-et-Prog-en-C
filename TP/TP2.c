@@ -5,6 +5,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 void majorite() {
     int age;
@@ -128,8 +129,16 @@ void pairImpair() {
 void nombrePremier() {
     int n;
 
-    printf("Entrez un nombre entier : ");
+    printf("Entrez un nombre : ");
     scanf("%d",&n);
+
+    for (int i =2;i<=sqrt(n);i++){
+        if(n%i==0){
+            printf("Le nombre %d n'est pas un nombre premier",n);
+            exit(0);
+        }
+    }
+    printf("Le nombre %d est un nombre premier",n);
 }
 
 void conversionDate() {
@@ -197,7 +206,7 @@ void triangleDesEtoiles() {
     printf("Donnez un nombre de ligne [3 - 10] : ");
     scanf("%d",&n);
 
-    for (int i = 0; i <=n ; i++) {
+    for (int i = 0; i <=n ; i=i+2) {
         printf("\n");
         for (int j = 0; j <= i; j++) {
             printf("*");
@@ -212,7 +221,7 @@ int main () {
     //joursDeLaSemaine();
     //codePIN();
     //pairImpair();
-
+    //nombrePremier();
     //conversionDate();
     //tableMultiplication();
     triangleDesEtoiles();
