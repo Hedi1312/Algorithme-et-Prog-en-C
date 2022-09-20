@@ -26,9 +26,10 @@ void compteARebour() {
 
     printf("Entrez un nombre entier pour un compte a rebours : ");
     scanf("%d",&n);
-    for (int i = n; i >= 0; i--) {
+    for (int i = n; i > 0; i--) {
         printf("\t%d\n",i);
     }
+    printf("\tBooom !\n");
 }
 
 
@@ -206,11 +207,97 @@ void triangleDesEtoiles() {
     printf("Donnez un nombre de ligne [3 - 10] : ");
     scanf("%d",&n);
 
-    for (int i = 0; i <=n ; i=i+2) {
+    for (int i = 0; i <=n ; i++) {
         printf("\n");
-        for (int j = 0; j <= i; j++) {
+        //printf("i = %d\n",i);
+
+        for (int j = 0; j < i; j++) {
             printf("*");
+            //printf("j = %d\n",j);
         }
+    }
+
+//    int nline;
+//    int numline = 0;
+//    int numstar;
+//    int i;
+//    printf("Donnez un nombre de lignes comprises entre 3 et 10 : ");
+//    scanf("%d",&nline);
+//
+//    while (nline>0){
+//        i = nline-1;
+//        while (i>0) {
+//            printf(" ");
+//            i--;
+//        }
+//        numstar = 2 * numline + 1;
+//        for (int j = 0; j < numstar; ++j) {
+//            printf("*");
+//        }
+//        printf("\n");
+//        numline++;
+//        nline--;
+//    }
+}
+
+
+void factorielleWhile() {
+    int n,m;
+    int res = 1;
+
+    printf("Entrez un entier : ");
+    scanf("%d",&n);
+    m = n;
+
+    while (m!=0) {
+        res = res * m;
+        m = m-1;
+    }
+    printf("\n%d factorielle est egale a %d",n,res);
+}
+
+
+void factorielleFor() {
+    int n;
+    int res = 1;
+
+    printf("Entrez un entier : ");
+    scanf("%d",&n);
+
+    for (int i = 1; i <= n ; i++) {
+        res = res *i;
+    }
+    printf("%d factorielle est egale a %d",n,res);
+}
+
+void calculatrice() {
+    char operateur;
+    int a,b;
+
+    printf("Entrez une operation mathematiques : ");
+    scanf("%d %c %d",&a,&operateur,&b);
+    printf("\n");
+
+    switch (operateur) {
+        case '+':
+            printf("Le resultat est %d%c%d = %d",a,operateur,b,a+b);
+            break;
+        case '-':
+            printf("Le resultat est %d%c%d = %d",a,operateur,b,a-b);
+            break;
+        case '*':
+            printf("Le resultat est %d%c%d = %d",a,operateur,b,a*b);
+            break;
+        case '/':
+            if (b!=0) {
+                printf("Le resultat est %d%c%d = %d",a,operateur,b,a/b);
+            }
+            else {
+                printf("Attention la division par 0 est impossible");
+            }
+            break;
+        default:
+            printf("Operateur invalide, vous deveez utiliser l'un des operateurs (+,-,*,/)");
     }
 }
 
@@ -224,7 +311,10 @@ int main () {
     //nombrePremier();
     //conversionDate();
     //tableMultiplication();
-    triangleDesEtoiles();
+    //triangleDesEtoiles();
+    //factorielleWhile();
+    //factorielleFor();
+    calculatrice();
 
     return 0;
 }

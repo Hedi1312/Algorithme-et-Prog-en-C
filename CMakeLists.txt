@@ -14,4 +14,5 @@ add_executable(Algorithme_et_Prog_en_C
     .idea/workspace.xml
     TP/TP1.c
         TP/TP2.c
+        TP/TP3.c
         TP/TP_Bonus.c)
