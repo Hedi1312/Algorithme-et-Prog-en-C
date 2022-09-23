@@ -105,12 +105,116 @@ void additionMatricielle() {
 
 }
 
+void strings() {
+    char chaine[] = {'S','a','l','u','t',' ','l','e','s',' ','c','o','d','e','u','r','s','!'};
+
+}
+
+
+void carteIdentite() {
+    char date[10];
+    char nom[25];
+    char prenom[25];
+    char couleur[15];
+
+    printf("\tDate de naissance (jj/mm/aaaa) : ");
+    scanf("%10s",date);
+
+    fflush(stdin);
+
+    printf("\tNom : ");
+    scanf("%s",nom);
+
+    printf("\tPrenom : ");
+    scanf("%s",prenom);
+
+    printf("\tCouleur des yeux : ");
+    scanf("%s",couleur);
+
+    printf("\nVous vous appelez %s %s, vous etes nee le %s et vos yeux sont %s",prenom,nom,date,couleur);
+}
+
+
+void majuscules() {
+    char string[100];
+    printf("Ecrire un message : ");
+    gets(string);
+
+    for (int i = 0; i < strlen(string); ++i) {
+        if(string[i]>=97 && string[i]<=122) {
+            string[i] = string[i]-32;
+        }
+    }
+    printf("Donne en majuscule : %s",string);
+}
+
+
+void miroire() {
+    char string[100];
+    char stringInverse[100];
+    printf("Ecrire un message : ");
+    gets(string);
+
+    for (int i = strlen(string)-1; i >=0 ; i--) {
+        stringInverse[strlen(string)-i-1]= string[i];
+    }
+    printf("\nEffet miroire : \n%s | %s",string,stringInverse);
+}
+
+void motDePasse() {
+    char mdp[8];
+    int i =0;
+    int maj,car,chiffre;
+    char confirmation[8];
+    do {
+        printf("Entrer un mot de passe (1 majuscule, 1 caractere speciale, un chiffre, 5-8 carcateres) : ");
+        scanf("%s", mdp);
+        fflush(stdin);
+
+        if (strlen(mdp)>=5 && strlen(mdp)<=8){
+            while  (mdp[i]!='\0') {
+
+                printf("lettre -> %c\n",mdp[i]);
+                if(mdp[i]>=65 && mdp[i]<=90) {
+                    maj=1;
+                }
+                if (mdp[i]>=33 && mdp[i]<=47 || mdp[i]>=58 && mdp[i]<=64) {
+                    car=1;
+                }
+                if (mdp[i]>=48 && mdp[i]<=57) {
+                    chiffre=1;
+                }
+                i++;
+            }
+
+            if(maj==1 && car==1 && chiffre==1){
+                printf("\nConfirmer le mot de passe : ");
+                scanf("%8s",confirmation);
+                fflush(stdin);
+            }
+        }
+        else {
+            printf("\nMot de passe saisit incorrecte !\n");
+        }
+
+    }while((strcmp(mdp,confirmation)!=0 || confirmation==NULL));
+    printf("\nMot de passe correct !");
+}
+
+
 int main() {
     //affichageTableau();
     //statistiques();
     //lettrePerdue();
     //matriceUnitaire();
-    additionMatricielle();
+    //additionMatricielle();
+
+    //strings();
+
+    //carteIdentite();
+    //majuscules();
+    //miroire();
+    motDePasse();
 
     return 0;
 }
