@@ -106,8 +106,13 @@ void additionMatricielle() {
 }
 
 void strings() {
-    char chaine[] = {'S','a','l','u','t',' ','l','e','s',' ','c','o','d','e','u','r','s','!'};
+    char chaine[] = {'S','a','l','u','t',' ','l','e','s',' ','c','o','d','e','u','r','s','!','\0'};
+    char chaine2[10];
 
+    printf("%s",chaine);
+    strncpy(chaine2,chaine,5);
+    chaine2[5]='\0';
+    printf("\n%s",chaine2);
 }
 
 
@@ -163,17 +168,16 @@ void miroire() {
 
 void motDePasse() {
     char mdp[8];
-    int i =0;
     int maj,car,chiffre;
     char confirmation[8];
     do {
+        int i =0;
         printf("Entrer un mot de passe (1 majuscule, 1 caractere speciale, un chiffre, 5-8 carcateres) : ");
         scanf("%s", mdp);
         fflush(stdin);
 
         if (strlen(mdp)>=5 && strlen(mdp)<=8){
             while  (mdp[i]!='\0') {
-
                 printf("lettre -> %c\n",mdp[i]);
                 if(mdp[i]>=65 && mdp[i]<=90) {
                     maj=1;
@@ -202,19 +206,55 @@ void motDePasse() {
 }
 
 
+void strlenPerso() {
+    char chaine[100];
+    int i =0;
+    printf("Entrer une chaine de caracteres : ");
+    scanf("%s", chaine);
+
+    while(chaine[i]!='\0') {
+        i++;
+    }
+    printf("Taille du message : %d",i);
+}
+
+
+void strcmpPerso(){
+    char chaine[100];
+    int i = 0;
+    char codeur[] = "CODEUR";
+
+    printf("Entrer une chaine de caracteres en MAJUSCULE : ");
+    scanf("%s", chaine);
+
+    while (chaine[i]!='\0'){
+        if(chaine[i]!=codeur[i]){
+            if(chaine[i]>codeur[i]) {
+                printf("\nLes chaines %s et %s ne sont pas identiques et %s > %s", chaine, codeur,chaine,codeur);
+            }
+            else{
+                printf("\nLes chaines %s et %s ne sont pas identiques et %s < %s", chaine, codeur,chaine,codeur);
+            }
+            exit(1);
+        }
+        i++;
+    }
+    printf("\nLes chaines %s et %s sont identiques",chaine,codeur);
+}
+
 int main() {
     //affichageTableau();
     //statistiques();
     //lettrePerdue();
     //matriceUnitaire();
     //additionMatricielle();
-
     //strings();
-
     //carteIdentite();
     //majuscules();
     //miroire();
-    motDePasse();
+    //motDePasse();
+    //strlenPerso();
+    strcmpPerso();
 
     return 0;
 }
