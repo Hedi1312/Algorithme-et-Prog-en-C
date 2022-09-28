@@ -49,7 +49,7 @@ void statistiques() {
 }
 
 void lettrePerdue() {
-    char tab[100];
+    char tab[1000];
     int occurence =0;
     char l;
     const int VALEUR_MIN = 'A', VALEUR_MAX = 'Z'; srand(time(NULL));
@@ -57,7 +57,7 @@ void lettrePerdue() {
     printf("Saisissez lettre en majuscule : ");
     scanf("%c",&l);
 
-    for(int i = 0;i < 100;i++) {
+    for(int i = 0;i < 1000;i++) {
         // generation aleatoire d’une lettre majuscule
         char lettre = (char)((rand() % (VALEUR_MAX-VALEUR_MIN+1)) + VALEUR_MIN);
         tab [i] = lettre;
