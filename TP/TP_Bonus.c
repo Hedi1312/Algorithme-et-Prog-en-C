@@ -20,26 +20,27 @@ void exercice8();
 
 
 int main () {
-    exercice1();
-
-    printf("%d",exercice2(9));
-    exercice2_2();
-
-    printf("%d",exercice3(20));
-    exercice3_2();
-
-    exercice4();
-
-    printf("%s",exercice5());
-
-    printf("%s",exercice6());
-
-    printf("%d",exercice7(0));
+//    exercice1();
+//
+//    printf("%d",exercice2(9));
+//    exercice2_2();
+//
+//    printf("%d",exercice3(20));
+//    exercice3_2();
+//
+//    exercice4();
+//
+//    printf("%s",exercice5());
+//
+//    printf("%s",exercice6());
+//
+//    printf("%d",exercice7(0));
 
     exercice8();
 
     return 0;
 }
+
 
 void exercice1() {
     /* Dans l’intervalle des nombre entiers de 100 à 500,
@@ -223,7 +224,7 @@ int exercice7(int n) {
     /* Ecrire une fonction récursive qui permet de calculer le
     factoriel d’un nombre entier passé en paramètre.*/
 
-    if (n == 1 || n == 0) {     // Etant donne que le factoriel de 0 et 1 est un cas particulier
+    if (n == 1 || n == 0) /*ou n<=1*/{     // Etant donne que le factoriel de 0 et 1 est un cas particulier
         return 1;               // Le factoriel de 1 et de 0 est egale a 1
     }
     return n * exercice7(n - 1);        // Etant donne que n factoriel -> n! = (n) (n-1) (n-2) … (1), on rappelle la fonction avec n-1 et comme c'est un produit on ajoute n* devant
@@ -232,5 +233,41 @@ int exercice7(int n) {
 
 
 void exercice8() {
+    int tab [5][5] ={{0,0,111,0,0},{0,0,55,56,0},{0,22,33,23,0},{5,17,16,7},{3,2,15,1,6}};
+
+    for (int i = 0; i <5 ; ++i) {
+        for (int j = 0; j < 5 ; ++j) {
+            if(tab[i][j]!=0){
+                printf("\t%d",tab[i][j]);
+            }
+
+        }
+
+        printf("\n");
+    }
+
+    /*il faut resoudre
+        3+x=y
+        x+u=v
+        y+v=22
+        u+o=p
+        o+6=m
+        p+m=23
+        p+v=33  */
+
+
+
+
+
+
+
+//
+//    for (int i = 0; i <6 ; ++i) {
+//
+//        for (int j = 0; j <i; ++j) {
+//            printf("%d ",i);
+//        }
+//        printf("\n");
+//    }
 
 }

@@ -202,42 +202,28 @@ void tableMultiplication() {
 }
 
 void triangleDesEtoiles() {
-    int n;
 
-    printf("Donnez un nombre de ligne [3 - 10] : ");
-    scanf("%d",&n);
+    int nline;
+    int numline = 0;
+    int numstar;
+    int i;
+    printf("Donnez un nombre de lignes comprises entre 3 et 10 : ");
+    scanf("%d",&nline);
 
-    for (int i = 0; i <=n ; i++) {
-        printf("\n");
-        //printf("i = %d\n",i);
-
-        for (int j = 0; j < i; j++) {
-            printf("*");
-            //printf("j = %d\n",j);
+    while (nline>0){
+        i = nline-1;
+        while (i>0) {
+            printf(" ");
+            i--;
         }
+        numstar = 2 * numline + 1;
+        for (int j = 0; j < numstar; ++j) {
+            printf("*");
+        }
+        printf("\n");
+        numline++;
+        nline--;
     }
-
-//    int nline;
-//    int numline = 0;
-//    int numstar;
-//    int i;
-//    printf("Donnez un nombre de lignes comprises entre 3 et 10 : ");
-//    scanf("%d",&nline);
-//
-//    while (nline>0){
-//        i = nline-1;
-//        while (i>0) {
-//            printf(" ");
-//            i--;
-//        }
-//        numstar = 2 * numline + 1;
-//        for (int j = 0; j < numstar; ++j) {
-//            printf("*");
-//        }
-//        printf("\n");
-//        numline++;
-//        nline--;
-//    }
 }
 
 
