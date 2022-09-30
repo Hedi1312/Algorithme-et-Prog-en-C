@@ -233,27 +233,27 @@ int exercice7(int n) {
 
 
 void exercice8() {
-    int tab [5][5] ={{0,0,111,0,0},{0,0,55,56,0},{0,22,33,23,0},{5,17,16,7},{3,2,15,1,6}};
+    int tab [5][5] ={{0,0,111,0,0},{0,0,55,56,0},{0,22,33,23,0},{5,17,16,7,0},{3,2,15,1,6}};
+
+    /*il faut resoudre
+    3+x=y
+    x+u=v
+    y+v=22
+    u+o=p
+    o+6=m
+    p+m=23
+    p+v=33  */
 
     for (int i = 0; i <5 ; ++i) {
         for (int j = 0; j < 5 ; ++j) {
             if(tab[i][j]!=0){
                 printf("\t%d",tab[i][j]);
             }
-
         }
-
         printf("\n");
     }
 
-    /*il faut resoudre
-        3+x=y
-        x+u=v
-        y+v=22
-        u+o=p
-        o+6=m
-        p+m=23
-        p+v=33  */
+
 
 
 
