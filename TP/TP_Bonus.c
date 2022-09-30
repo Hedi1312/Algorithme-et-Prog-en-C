@@ -21,20 +21,20 @@ void exercice8();
 
 int main () {
     exercice1();
-//
-//    printf("%d",exercice2(4));
-//    exercice2_2();
-//
-//    printf("%d",exercice3(28));
-//    exercice3_2();
-//
-//    exercice4();
-//
-//    printf("%s",exercice5());
-//
-//    printf("%s",exercice6());
-//
-//    printf("%d",exercice7(3));
+
+    printf("%d",exercice2(9));
+    exercice2_2();
+
+    printf("%d",exercice3(20));
+    exercice3_2();
+
+    exercice4();
+
+    printf("%s",exercice5());
+
+    printf("%s",exercice6());
+
+    printf("%d",exercice7(0));
 
     exercice8();
 
@@ -136,12 +136,10 @@ void exercice3_2() {
 
 
 void exercice4() {
-    /*  Soit N1 et N2 deux nombre que l'on souhaite obtenir à
-        partir d'un autre nombre N de la façon suivante:
+    /*  Soit N1 et N2 deux nombre que l'on souhaite obtenir à partir d'un autre nombre N de la façon suivante:
         N1: sera constitué par les chiffres pairs de N
         N2: sera constitué par les chiffres impairs
-        Ecrire un programme en C qui permet d’obtenir N1 et N2 à partir
-        d’un nombre que l’utilisateur saisi au clavier. */
+        Ecrire un programme en C qui permet d’obtenir N1 et N2 à partir d’un nombre que l’utilisateur saisi au clavier. */
 
     int N,N1=0,N2=0,i;
 
@@ -186,7 +184,7 @@ char * exercice5() {        //Etant donne que VRAI et FALSE sont des chaines de 
             return "FALSE";   // Le chaine de caractere n'est pas un palindrome
         }
     }
-    return "VRAIE";     // Le chaine de caractere est un palindrome
+    return "VRAI";     // Le chaine de caractere est un palindrome
 }
 
 
