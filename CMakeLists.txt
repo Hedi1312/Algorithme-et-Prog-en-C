@@ -17,4 +17,4 @@ add_executable(Algorithme_et_Prog_en_C
         TP/TP3.c
         TP/TP4.c
         TP/TP5.c
-        TP/TP_Bonus.c TP/exercice9.c)
+        TP/TP_Bonus.c TP)
