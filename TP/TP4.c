@@ -16,7 +16,7 @@ void adresseVariables() {
     printf("\tType : char\n");
     printf("\tTaille : %d octet\n",sizeof(c));
     printf("\tContenu : %c\n",c);
-    printf("\tAdresse : %x\n",&c);
+    printf("\tAdresse : %p\n",&c);
 }
 
 
@@ -38,36 +38,63 @@ void inversionVariable() {
     char *p_nom = &nom;
 
     printf("Vos initiales sont %c %c\n",prenom,nom);
+
     //inversion
 
-//    *p_prenom = *p_nom;
-    char *p_temp = &nom;
+    char tmp = *p_prenom;
+    *p_prenom = *p_nom;
+    *p_nom = tmp;
 
-    printf("*Prenom -> %c -> %x -> prenom -> %c\n",*p_prenom,p_prenom,prenom);
-    printf("*Nom -> %c -> %x -> nom -> %c\n\n",*p_nom,p_nom,nom);
+    printf("Vos initiales inverses sont %c %c\n",prenom,nom);
+}
 
-    p_nom = p_prenom;
-    p_prenom = p_temp;
+void sosCrash() {
+    int age=23;
+    int *pointeur_age=&age;
 
-    //prenom = *p_temp;
-    //nom = *p_nom;
+    printf("Quel est votre age ? ");
+    scanf("%d",pointeur_age);
 
-    printf("*Prenom -> %c -> %x -> prenom -> %c\n",*p_prenom,p_prenom,prenom);
-    printf("*Nom -> %c -> %x -> nom -> %c\n\n",*p_nom,p_nom,nom);
+    printf("Vous avez %d ans\n",age);
+}
 
-    printf("*Temp %c -> %x\n",*p_temp,p_temp);
 
-//    printf("Vos initiales sont %c %c\n",prenom,nom);
+void longueurChaine() {
+    char chaine[101];
+    char *p_chaine;
 
+    /* Saisie des données */
+    printf("Entrez une ligne de texte (max.100 caracteres) :\n");
+    gets(chaine);
+    /* Placer P à la fin de la chaîne */
+    for (p_chaine=chaine; *p_chaine; p_chaine++)
+        ;
+
+    printf("La chaine \"%s\" contient %d caracteres\n", chaine, p_chaine-chaine);
+}
+
+void calculTableau() {
+    int tab[50];
+    int n,*p,somme=0;
+
+    printf("Donnez le nombre d'elements (max 50) : ");
+    scanf("%d",&n);
+
+    for(p=tab; p < tab + n; p++){
+        scanf("%d",p);
+        somme = somme + *p;
+    }
+
+    printf("La somme des elements du tableau est : %d\n", somme);
 }
 
 int main() {
     //adresseVariables();
     //pointeurs();
-    inversionVariable();
+    //inversionVariable();
     //sosCrash();
     //longueurChaine();
-    //calculTableau();
+    calculTableau();
 
     return 0;
 }

@@ -33,11 +33,13 @@ char* isANumber(int a) {
 }
 
 
-int valPresente(int tab[],int n) {
-    for(int i=0;i<;i++) {
-        printf("%d",*(tab+i));
+int valPresente(int tab[],int taille,int n) {
+    for(int i=0;i<taille;i++) {
+        if(tab[i]==n){
+            return i;
+        }
     }
-    return 8;
+    return -1;
 }
 
 
@@ -77,13 +79,14 @@ int main() {
 //    scanf("%d",&a);
 //    printf("%s", isANumber(a));
 
-    int tab[]={1,2,3,4,5,6,7};
-    printf("%d", valPresente(tab,4));
+//    int tab[]={10,20,30,40,50,60,70};
+//    int n = 50;
+//    printf("La valeur %d est a la position %d du tableau", n,valPresente(tab,7,n));
 
 //    char c='i';
 //    printf("Le caractere '%c' est present %d fois",c, occurences("Oh le joli fichier",c));
 
-//    xDeF();
+    xDeF();
 
     return 0;
 }
