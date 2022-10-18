@@ -14,7 +14,7 @@ typedef struct personne {
 } Personne;
 
 
-Personne nouvellePersonne( char nom[50], int age) {
+Personne nouvellePersonne(char nom[50], int age) {
     Personne personne;
 
     strcpy(personne.nom,nom);
@@ -30,6 +30,7 @@ void ajouterPersonneTab(Personne p,Personne *tab){
     indice++;
 }
 
+
 void parcourTab(Personne *tab){
     for (int i = 0; i < indice; ++i) {
         printf("Nom -> %s\t",(tab+i)->nom);
@@ -39,17 +40,9 @@ void parcourTab(Personne *tab){
 
 void exercice3(Personne tab[],int taille) {
     for (int i = 0; i < taille ; ++i) {
-        if(tab[i].age<20){
-            for (int j = i; j < taille; j++) {
-//                tab[j] = tab[j + 1];
-                if( j < taille-1){
-                    tab[j] = tab[j+1];
-                }
-                else
-                {
-                    tab[j] = tab[j];
-                }
-            }
+        if(tab[i].age>=20){
+            tab[i].age=-1;
+            strcpy(tab[i].nom,"-1");
         }
     }
 }

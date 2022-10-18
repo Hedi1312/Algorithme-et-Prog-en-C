@@ -21,4 +21,5 @@ add_executable(Algorithme_et_Prog_en_C
         TP/TP_Bonus.c TP
         Structure/Exercice1.c
         Structure/Exercice2.c
-        Structure/Exercice3.c)
+        Structure/Exercice3.c
+        Structure/Exercice4.c)
