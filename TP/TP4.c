@@ -60,15 +60,16 @@ void sosCrash() {
 
 
 void longueurChaine() {
-    char chaine[101];
+    char chaine[51];
     char *p_chaine;
 
     /* Saisie des données */
-    printf("Entrez une ligne de texte (max.100 caracteres) :\n");
+    printf("Saisir une chaine de caractere (max 50 caracteres) :\n");
     gets(chaine);
     /* Placer P à la fin de la chaîne */
-    for (p_chaine=chaine; *p_chaine; p_chaine++)
-        ;
+    for (p_chaine=chaine; *p_chaine; p_chaine++){
+
+    }
 
     printf("La chaine \"%s\" contient %d caracteres\n", chaine, p_chaine-chaine);
 }

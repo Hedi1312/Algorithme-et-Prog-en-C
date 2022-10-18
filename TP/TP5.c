@@ -43,7 +43,6 @@ int valPresente(int tab[],int taille,int n) {
 }
 
 
-
 int occurences(char*s, char c) {
     int compteur=0;
 
