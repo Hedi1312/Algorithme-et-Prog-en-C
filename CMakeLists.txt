@@ -22,4 +22,6 @@ add_executable(Algorithme_et_Prog_en_C
         Structure/Exercice1.c
         Structure/Exercice2.c
         Structure/Exercice3.c
-        Structure/Exercice4.c)
+        Structure/Exercice4.c
+        Controle/exercice1.c
+        Controle/exercice2.c)
